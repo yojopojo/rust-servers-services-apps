@@ -1,0 +1,18 @@
+[package] # 대괄호를 한 번 쓰면 기본 테이블 정의
+name = "tutor-nodb"
+version = "0.1.0"
+authors = ["peshwar9"]
+edition = "2021"
+default-run="tutor-service"
+
+[dependencies]
+actix-web = "4.2.1"
+actix-rt = "2.7.0" # Actix의 비동기 런타임, 러스트는 외부 런타임 엔진을 사용해 비동기 코드를 실행
+serde = {version = "1.0.110", features = ["derive"]}
+chrono = {version = "0.4.11", features = ["serde"]}
+
+[[bin]] # 대괄호를 두 번 쓰면 배열 형태의 테이블을 정의
+name = "basic-server"
+
+[[bin]]
+name = "tutor-service"
