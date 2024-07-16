@@ -1,0 +1,27 @@
+[package]
+name = "tutor-db"
+version = "0.1.0"
+authors = ["peshwar9"]
+edition = "2021"
+
+[dependencies]
+#Actix web framework and run-time
+actix-web = "4.1.0"
+actix-rt = "2.7.0"
+
+# 환경변수 접근
+dotenv = "0.15.0"
+
+# DB 접근
+# version은 0.6.2 -> 0.7.4로 변경
+sqlx = {version = "0.7.4", default_features = false, features = ["postgres", "runtime-tokio-native-tls", "macros", "chrono"]}
+
+
+# 데이터 직렬화 라이브러리
+serde = { version = "1.0.144", features = ["derive"] }
+
+# 기타 유틸
+chrono = {version = "0.4.22", features = ["serde"]}
+
+# 바이너리 빌드를 위해 필요
+openssl = { version = "0.10.41", features = ["vendored"] }
